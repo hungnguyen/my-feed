@@ -34,7 +34,6 @@ import {
 } from "../actions/filterAction";
 import { connect } from "react-redux";
 import { getSources } from "../actions/sourceAction";
-import countries from "../reducers/countries";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({

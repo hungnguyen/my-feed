@@ -31,12 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = ({ news, getNews, filter }) => {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    vertical: "top",
-    horizontal: "center",
-  });
 
-  const { vertical, horizontal } = state;
   useEffect(() => {
     getNews(filter);
   }, [filter, getNews]);
@@ -63,7 +58,10 @@ const Home = ({ news, getNews, filter }) => {
         </Grid>
       </div>
       <Snackbar
-        anchorOrigin={{ vertical, horizontal }}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "center",
+        }}
         open={news.isLoading}
         TransitionComponent={slideTransition}
         key=""
